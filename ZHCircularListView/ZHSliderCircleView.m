@@ -217,8 +217,8 @@
         }else{// 二、三象限，角度值是付值
             self.mStartAngle += start - end;
             self.mTmpAngle += start - end;
-            //            NSLog(@"第二、三象限____%f",mStartAngle);
-            //             NSLog(@"mTmpAngle is %f",mTmpAngle);
+            //NSLog(@"第二、三象限____%f",mStartAngle);
+            //NSLog(@"mTmpAngle is %f",mTmpAngle);
         }
         //重绘button位置
         [self layoutBtnSet];
@@ -232,6 +232,7 @@
 
     }
 }
+//没用这个方法
 -(void)buttonToDown:(UIButton *)button{
     self.beginPoint = button.center;
     self.movePoint = [self.panGR locationInView:self];
@@ -275,26 +276,9 @@
     }
     float scale = cha / M_PI_2  ;
     
-    NSLog(@"scale = %f\nstart = %f  end = %f\ncha = %f",scale,RADIANS_TO_DEGREES(self.biggestPointAngle),RADIANS_TO_DEGREES(selfP),cha);
+//    NSLog(@"scale = %f\nstart = %f  end = %f\ncha = %f",scale,RADIANS_TO_DEGREES(self.biggestPointAngle),RADIANS_TO_DEGREES(selfP),cha);
     
     btn.transform = CGAffineTransformMakeScale(scale, scale);
-
-    
-    
-    
-//    float selfP = [self get4Angle:CGPointMake(btn.center.x, btn.center.y)];
-//    
-//    float cha = 0.0;
-//    if ((biggestP > M_PI && selfP < M_PI) || (biggestP < M_PI && selfP > M_PI)) {
-//        cha = M_PI - ABS(biggestP - selfP - M_PI);
-//    }else{
-//        cha = ABS(biggestP - selfP - M_PI);
-//    }
-//    float scale = ABS(cha / M_PI)  ;
-//    
-//    NSLog(@"---ddddd----%f\nend = %f\ncha = %f",scale,selfP,cha);
-//    btn.transform = CGAffineTransformMakeScale(scale, scale);
-    
 }
 //计算当前弧度度（0～360）
 -(float)get4Angle:(CGPoint)point{
